@@ -24,7 +24,7 @@ jobs:
         run: |
           VERSION=$(echo ${{ github.sha }} | cut -c1-8)
           echo "VERSION=$VERSION"
-          echo "version=$VERSION" >> $GITHUB_OUTPU
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
           
       - name: Build front
         run: |
