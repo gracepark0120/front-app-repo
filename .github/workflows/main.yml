@@ -8,8 +8,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
-      id-token: write
-      contents: read
+      id-token: write # This is required for requesting the JWT
+      contents: read # This is required for actions/checkout
+      repository-projects: write # This is required for actions that need write access
+      actions: read # This is required for slack
     steps:
       - name: Checkout source code
         uses: actions/checkout@v2
