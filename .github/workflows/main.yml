@@ -40,9 +40,9 @@ jobs:
       - name: Get image tag(verion)
         id: image
         run: |
-          VERSION=\$(echo \${{ github.sha }} | cut -c1-8)
-          echo VERSION=\$VERSION
-          echo "::set-output name=version::\$VERSION"
+          VERSION=$(git rev-parse --short HEAD)
+          echo VERSION=$VERSION
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
 
       - name: Build, tag, and push image to Amazon ECR
         id: image-info
