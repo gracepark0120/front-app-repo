@@ -22,7 +22,7 @@ jobs:
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@v1.7.0
         with:
-          role-to-assume: arn:aws:iam::341552581828:role/grace-demo
+          role-to-assume: arn:aws:iam::341552581828:role/grace-github-demo
           aws-region: ap-southeast-1
       
 
